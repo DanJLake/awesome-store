@@ -1,0 +1,30 @@
+header {
+  height: 50px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+
+  background: rgb(255, 255, 255);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+
+  img {
+    height: 35px;
+    border-radius: 50px;
+    margin: 0 15px;
+  }
+
+  nav {
+    ul {
+      padding: 2px;
+      list-style: none;
+
+      li {
+        display: inline;
+        margin: 0 10px;
+      }
+    }
+  }
+}
