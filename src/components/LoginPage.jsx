@@ -68,7 +68,7 @@ function LoginPage() {
     auth
       .createUserWithEmailAndPassword(registerEmail, registerPassword)
       .then((auth) => {
-        alert("Welcome" + auth.user.name);
+        alert("Account created with email address: ", auth.user.email);
         history.push("/");
       })
       .catch((e) => {
@@ -129,7 +129,16 @@ function LoginPage() {
         </fieldset>
       </form>
       <h4>Or</h4>
-      <h4>Log in with Google</h4>
+      <img
+        src="https://i.stack.imgur.com/VHSZf.png"
+        alt=""
+        style={{ height: 150 + "px", cursor: "pointer" }}
+      />
+      <img
+        src="https://www.drupal.org/files/project-images/apple-signinbutton-560.JPEG"
+        alt=""
+        style={{ height: 145 + "px", cursor: "pointer" }}
+      />
 
       <hr />
       <h3>New Users</h3>
