@@ -22,12 +22,20 @@
   .login-page-login-form {
     button {
       background: rgb(32, 88, 32);
+
+      &:hover {
+        background: rgb(50, 100, 60);
+      }
     }
   }
 
   .login-page-register-form {
     button {
       background: rgb(139, 0, 0);
+
+      &:hover {
+        background: rgb(180, 0, 0);
+      }
     }
   }
   fieldset {
@@ -69,8 +77,20 @@
 
     .login-form-error-message {
       margin-top: -15px;
+      margin-bottom: 10px;
       color: red;
       height: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .login-page {
+    width: auto;
+
+    img {
+      max-width: 320px;
+      object-fit: contain;
     }
   }
 }

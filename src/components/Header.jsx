@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../StateProvider";
-import { auth } from "../firebase";
+//import { auth } from "../firebase";
 
 //SCSS Imports
 import "./scss/header.scss";
 
 function Header() {
   const [{ basket, user }] = useStateValue();
-  console.log(user);
+  //console.log(user);
   return (
     <header>
       <Link to="/">
@@ -19,16 +19,15 @@ function Header() {
       </Link>
       <nav>
         <ul>
-          <li>
-            {user ? (
-              <Link to="/account">My Account</Link>
-            ) : (
-              <Link to="/login">Log In / Register</Link>
-            )}
-          </li>
-          <li>
-            <Link to="/">Link 2</Link>
-          </li>
+          {user ? (
+            <Link to="/account" className="header-account-button">
+              <li className="header-account-button">My Account</li>
+            </Link>
+          ) : (
+            <Link to="/login">
+              <li className="header-log-in-button">Log In / Register</li>
+            </Link>
+          )}
         </ul>
       </nav>
     </header>

@@ -1,10 +1,7 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
-import { auth } from "./firebase";
-
-//Logo
-import logo from "./logo.svg";
+import { auth, db } from "./firebase";
 
 //SCSS Imports
 
@@ -14,15 +11,24 @@ import LoginPage from "./components/LoginPage";
 import AccountPage from "./components/AccountPage";
 
 function App() {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user, dbUser }, dispatch] = useStateValue();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         //logged into account
+        let dbUser = db
+          .collection("users")
+          //.where("email", "==", user.email)
+          .doc(authUser.email)
+          .get()
+          .then((doc) => {
+            return doc.data();
+          });
         dispatch({
           type: "SET_USER",
           user: authUser,
+          dbUser,
         });
       } else {
         //not logged into account

@@ -1,24 +1,33 @@
 export const initialState = {
   basket: [],
   user: null,
+  dbUser: null,
+  products: [
+    {
+      key: 1,
+      name: "test",
+    },
+  ],
 };
 
 export const getBasketTotal = (basket) =>
   basket?.reduce((amount, item) => item.price + amount, 0);
 
 function reducer(state, action) {
-  console.log(action);
+  //console.log(action);
   switch (action.type) {
     case "SET_USER":
       return {
         ...state,
         user: action.user,
+        dbUser: action.dbUser,
       };
-      break;
+
+    //break;
     case "ADD_TO_BASKET":
       //Add item to basket
       return { ...state, basket: [...state.basket, action.item] };
-      break;
+    //break;
 
     case "REMOVE_FROM_BASKET":
       //Remove item from basket
@@ -37,7 +46,7 @@ function reducer(state, action) {
       }
 
       return { ...state, basket: newBasket };
-      break;
+    //break;
 
     default:
       return state;
