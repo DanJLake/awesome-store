@@ -23,11 +23,12 @@ header {
 
       a {
         text-decoration: none;
+        margin: 0 10px;
       }
 
       li {
         display: inline;
-        margin: 0 10px;
+        margin: 0 0px;
 
         &.header-log-in-button {
           background-color: rgb(250, 178, 43);
