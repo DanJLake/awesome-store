@@ -15,6 +15,12 @@
     margin: 5px 0;
   }
 
+  .account-page-button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
   button {
     width: 280px;
     height: 35px;
@@ -51,6 +57,10 @@
     img {
       max-width: 320px;
       object-fit: contain;
+    }
+
+    .account-page-button-container {
+      flex-direction: column;
     }
   }
 }

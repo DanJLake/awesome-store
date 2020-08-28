@@ -52,7 +52,7 @@ function AccountPage() {
           {userBirthDate}
         </p>
         <span className="account-page-button-container">
-          <button className="edit-details-button">Edit Account Details</button>
+          {/*<button className="edit-details-button">Edit Account Details</button>*/}
           <button onClick={login} className="sign-out-button">
             Sign Out
           </button>
